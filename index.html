@@ -1,45 +1,9 @@
-<!DOCTYPE html>
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="UTF-8">
+		<meta charset="UTF-8">
+		<title>Start</title>
+		<link rel="stylesheet" type="text/css" href="index_files/styles.css">
 	<style>
-	a {
-		border-radius: 5px;
-		color: #FFFFFF;
-		margin: 10px;
-		padding: 3px;
-		text-decoration: none;
-	}
-
-	a:hover {
-		background-color: #263238;
-	}
-
-	body {
-		background-color: #263238;
-		font-family: Arial, Helvetica, sans-serif;
-		margin: 40px auto;
-		max-width: 900px;
-	}
-
-	#card {
-		background-color:#37474f;
-		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-		display: flex;
-		height: 285px;	
-	}
-
-	#content {
-		   margin: 10px;
-	}
-
-	#title {
-		color: #FFFFFF;
-		font-size: 1.5em;
-		margin-bottom: 15px;	
-	}
-	</style>
-<style>
             .flipX video::-webkit-media-text-track-display {
                 transform: matrix(-1, 0, 0, 1, 0, 0) !important;
             }
@@ -62,33 +26,53 @@
                 -moz-animation: blinkWarning 1s linear infinite;
                 animation: blinkWarning 1s linear infinite;
             }</style></head>
-<body>
-    <div id="card">
-        <!--Your waifu here--> 
-		<img id="waifu" src="startpages.github.io_files/waifu.png">
-		<div id="content">
-			<div id="title">Welcome to the Internet</div>
-			<table>
-			<tbody>
-	            <tr>
-					<td><a href="https://mail.google.com/" target="_blank">Gmail</a></td>
-					<td><a href="https://drive.google.com/" target="_blank">Drive</a></td>
-					<td><a href="https://keep.google.com/" target="_blank">Keep</a></td>
-				</tr>
-				<tr>
-					<td><a href="https://github.com/" target="_blank">GitHub</a></td>
-					<td><a href="https://bitbucket.org/" target="_blank">Bitbucket</a></td>
-					<td><a href="https://www.dropbox.com/" target="_blank">Dropbox</a></td>
-				</tr>
-				<tr>
-					<td><a href="" target="_blank">Link 1</a></td>
-					<td><a href="" target="_blank">Link 2</a></td>
-					<td><a href="" target="_blank">Link 3</a></td>
-				</tr>
-			</tbody>
-			</table>
-		</div>
-    </div>
+	<body>
+		<div class="pageContainer">
+			<div class="vertAlign">
 
+				<div class="boxContainer">
+					<div class="box">
+						<div class="boxHeader" id="boxHeader1">Hobby</div>
+						<ul>
+							<li><a href="https://github.com/">Github</a></li>
+							<li><a href="http://stackoverflow.com/">Stack Overflow</a></li>
+							<li><a href="http://reddit.com/r/programming">/r/programming</a></li>
+							<li><a href="http://reddit.com/r/linux">/r/linux</a></li>
+							<li><a href="https://what.cd/">What.CD</a></li>
+							<li><a href="http://theonion.com/">The Onion</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<div class="boxHeader" id="boxHeader2">Social</div>
+							<ul>
+								<li><a href="https://www.openmailbox.org/webmail/">OPMBX</a></li>
+								<li><a href="http://reddit.com/">reddit</a></li>
+								<li><a href="http://news.ycombinator.com/">Hacker News</a></li>
+								<li><a href="http://last.fm/">last.fm</a></li>
+								<li><a href="https://4chan.org/mu/">/mu/</a></li>
+								<li><a href="https://hangouts.google.com/">Hangouts</a></li>
+							</ul>
+					</div>
+					<div class="box">
+						<div class="boxHeader" id="boxHeader3">School</div>
+							<ul>
+								<li><a href="http://www.pathwaystotechnology.com/">Pathways</a></li>
+								<li><a href="https://powerschool.hartfordschools.org/public/home.html">Powerschool</a></li>
+								<li><a href="http://www.pathwaystotechnology.com/page.cfm?p=1690">Portal</a></li>
+								<li><a href="http://www.edmodo.com/">Edmodo</a></li>
+								<li><a href="https://drive.google.com/">Drive</a></li>
+								<li><a href="http://ai2.appinventor.mit.edu/">App Inventor</a></li>
+							</ul>
+					</div>
+				</div>
+
+				<div class="search">
+					<form class="searchForm" method="GET" action="https://duckduckgo.com/?q=">
+						<input class="searchInput" type="text" name="q" autofocus="">
+					</form>
+				</div>
+			</div>
+		</div>
+	
 
 </body></html>
