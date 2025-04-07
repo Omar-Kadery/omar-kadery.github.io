@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orion's Startpage</title>
+    <title>Omar Kadery</title>
     <style>
         :root {
             /* Gruvbox Color Palette */
@@ -255,15 +255,6 @@
                 <div class="date" id="date">Monday, January 1, 2025</div>
             </div>
 
-            <div class="welcome">
-                <h1>Welcome back, Orion</h1>
-                <p>Your personal startpage awaits.</p>
-            </div>
-
-            <div class="search-bar">
-                <input type="text" placeholder="Search the web..." id="search-input">
-            </div>
-
             <div class="bookmarks-container">
                 <div class="bookmark-section">
                     <h2>Essentials</h2>
@@ -331,17 +322,6 @@
         // Update time initially and then every second
         updateTime();
         setInterval(updateTime, 1000);
-
-        // Search functionality
-        const searchInput = document.getElementById('search-input');
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const query = searchInput.value.trim();
-                if (query) {
-                    window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-                }
-            }
-        });
 
         // Ensure the container is at least as tall as the image
         function adjustContainerHeight() {
