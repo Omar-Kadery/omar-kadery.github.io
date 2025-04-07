@@ -1,9 +1,24 @@
+<!DOCTYPE html>
+<!--    Copyright 2014 gokoururi
+        This work is free. You can redistribute it and/or modify it under the
+        terms of the Do What The Fuck You Want To Public License, Version 2,
+        as published by Sam Hocevar. See the COPYING file for more details. -->
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="UTF-8">
-		<title>Start</title>
-		<link rel="stylesheet" type="text/css" href="index_files/styles.css">
-	<style>
+        <meta charset="utf-8">
+        <title>Welcome Home</title>
+
+        <link rel="stylesheet" style="text/css" href="index_files/general.css">
+
+        <!-- To change theme, replace its name in following 4 lines  -->
+        <link rel="icon" href="https://startpages.github.io/startpages/homepage-gokoururi/themes/ruri-dark/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" style="text/css" href="index_files/colors.css">
+        <script type="text/javascript">var mascotPath = "themes/ruri-dark/images/mascots/";</script>
+        <script type="text/javascript" src="index_files/mascots.js"></script>
+
+        <script type="text/javascript" src="index_files/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="index_files/mascots-control.js"></script>
+    <style>
             .flipX video::-webkit-media-text-track-display {
                 transform: matrix(-1, 0, 0, 1, 0, 0) !important;
             }
@@ -26,53 +41,66 @@
                 -moz-animation: blinkWarning 1s linear infinite;
                 animation: blinkWarning 1s linear infinite;
             }</style></head>
-	<body>
-		<div class="pageContainer">
-			<div class="vertAlign">
-
-				<div class="boxContainer">
-					<div class="box">
-						<div class="boxHeader" id="boxHeader1">Hobby</div>
-						<ul>
-							<li><a href="https://github.com/">Github</a></li>
-							<li><a href="http://stackoverflow.com/">Stack Overflow</a></li>
-							<li><a href="http://reddit.com/r/programming">/r/programming</a></li>
-							<li><a href="http://reddit.com/r/linux">/r/linux</a></li>
-							<li><a href="https://what.cd/">What.CD</a></li>
-							<li><a href="http://theonion.com/">The Onion</a></li>
-						</ul>
-					</div>
-					<div class="box">
-						<div class="boxHeader" id="boxHeader2">Social</div>
-							<ul>
-								<li><a href="https://www.openmailbox.org/webmail/">OPMBX</a></li>
-								<li><a href="http://reddit.com/">reddit</a></li>
-								<li><a href="http://news.ycombinator.com/">Hacker News</a></li>
-								<li><a href="http://last.fm/">last.fm</a></li>
-								<li><a href="https://4chan.org/mu/">/mu/</a></li>
-								<li><a href="https://hangouts.google.com/">Hangouts</a></li>
-							</ul>
-					</div>
-					<div class="box">
-						<div class="boxHeader" id="boxHeader3">School</div>
-							<ul>
-								<li><a href="http://www.pathwaystotechnology.com/">Pathways</a></li>
-								<li><a href="https://powerschool.hartfordschools.org/public/home.html">Powerschool</a></li>
-								<li><a href="http://www.pathwaystotechnology.com/page.cfm?p=1690">Portal</a></li>
-								<li><a href="http://www.edmodo.com/">Edmodo</a></li>
-								<li><a href="https://drive.google.com/">Drive</a></li>
-								<li><a href="http://ai2.appinventor.mit.edu/">App Inventor</a></li>
-							</ul>
-					</div>
-				</div>
-
-				<div class="search">
-					<form class="searchForm" method="GET" action="https://duckduckgo.com/?q=">
-						<input class="searchInput" type="text" name="q" autofocus="">
-					</form>
-				</div>
-			</div>
-		</div>
-	
+    <body>
+        <main class="mascot" style="background-image: url(&quot;themes/ruri-dark/images/mascots/ruri3.png&quot;);"> <!-- Random mascot image will be set as background-image by javascript -->
+            <header>
+                <h1>Welcome to the Internet, <span class="name-highlight">Goshujin-sama</span></h1>
+                <p class="subtitle">Its not like I like you or anything</p>
+            </header>
+            <section class="searchContainer">
+                <form class="searchForm" method="get" action="https://google.com/search">
+                    <input class="searchBar search_google" type="text" name="q" placeholder="Google" autofocus="autofocus" search_="">
+                </form>
+                <form class="searchForm" method="get" action="https://youtube.com/results">
+                    <input class="searchBar search_youtube" type="text" name="search_query" placeholder="Youtube" search_="">
+                </form>
+                <form class="searchForm" method="get" action="https://en.wikipedia.org/w/index.php">
+                    <input class="searchBar search_wikipedia" type="text" name="search" placeholder="Wikipedia (en)" search_="">
+                </form>
+            </section>
+            <nav>
+                <ul class="buttonList">
+                    <li class="button button_green"><a href="http://github.com/gokoururi/homepage">Github</a></li>
+                    <li class="button button_grey"><a href="#">Gelbooru</a></li>
+                    <li class="button button_grey buttonArrow"><a href="#">Duke of Earl</a>
+                        <ul>
+                            <li><a href="#">When I hold you</a></li>
+                            <li><a href="#">In my Arms</a></li>
+                            <li><a href="#">You are my duchess</a></li>
+                            <li><a href="#">Of earl</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="columnList">
+                    <li class="column column_purple">
+                        <a>Resources</a>
+                        <ul>
+                            <li><a href="https://drive.google.com/folderview?id=0B_VmbVyD4eT3N1VUbGN4Wjd5OVE">Cute 2D Girls</a></li>
+                            <li><a href="https://developer.mozilla.org//">MDN</a></li>
+                            <li><a href="https://wiki.installgentoo.com/">Install Gentoo</a></li>
+                        </ul>
+                    </li>
+                    <li class="column column_green">
+                        <a>4chon</a>
+                        <ul>
+                            <li><a href="http://boards.4chan.org/v/">Video Games</a></li>
+                            <li><a href="http://boards.4chan.org/vg/">Video Game General</a></li>
+                            <li><a href="http://boards.4chan.org/g/">Technology</a></li>
+                            <li><a href="http://boards.4chan.org/jp/">Otaku Culture</a></li>
+                        </ul>
+                    </li>
+                    <li class="column column_pink">
+                        <a>Animution</a>
+                        <ul>
+                            <li><a href="http://bakabt.me/">Bakabt</a></li>
+                            <li><a href="http://www.nyaa.se/">Nyaa</a></li>
+                            <li><a href="http://utw.me/">UTW</a></li>
+                            <li><a href="http://mazuisubs.com/">Mazui</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+    
 
 </body></html>
