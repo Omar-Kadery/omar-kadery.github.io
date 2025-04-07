@@ -1,106 +1,369 @@
 <!DOCTYPE html>
-<!--    Copyright 2014 gokoururi
-        This work is free. You can redistribute it and/or modify it under the
-        terms of the Do What The Fuck You Want To Public License, Version 2,
-        as published by Sam Hocevar. See the COPYING file for more details. -->
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <title>Welcome Home</title>
-
-        <link rel="stylesheet" style="text/css" href="index_files/general.css">
-
-        <!-- To change theme, replace its name in following 4 lines  -->
-        <link rel="icon" href="https://startpages.github.io/startpages/homepage-gokoururi/themes/ruri-dark/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
-        <link rel="stylesheet" style="text/css" href="index_files/colors.css">
-        <script type="text/javascript">var mascotPath = "themes/ruri-dark/images/mascots/";</script>
-        <script type="text/javascript" src="index_files/mascots.js"></script>
-
-        <script type="text/javascript" src="index_files/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="index_files/mascots-control.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orion's Startpage</title>
     <style>
-            .flipX video::-webkit-media-text-track-display {
-                transform: matrix(-1, 0, 0, 1, 0, 0) !important;
-            }
-            .flipXY video::-webkit-media-text-track-display {
-                transform: matrix(-1, 0, 0, -1, 0, 0) !important;
-            }
-            .flipXYX video::-webkit-media-text-track-display {
-                transform: matrix(1, 0, 0, -1, 0, 0) !important;
-            }</style><style>
-            @keyframes blinkWarning {
-                0% { color: red; }
-                100% { color: white; }
-            }
-            @-webkit-keyframes blinkWarning {
-                0% { color: red; }
-                100% { color: white; }
-            }
-            .blinkWarning {
-                -webkit-animation: blinkWarning 1s linear infinite;
-                -moz-animation: blinkWarning 1s linear infinite;
-                animation: blinkWarning 1s linear infinite;
-            }</style></head>
-    <body>
-        <main class="mascot" style="background-image: url(&quot;themes/ruri-dark/images/mascots/ruri3.png&quot;);"> <!-- Random mascot image will be set as background-image by javascript -->
-            <header>
-                <h1>Welcome to the Internet, <span class="name-highlight">Goshujin-sama</span></h1>
-                <p class="subtitle">Its not like I like you or anything</p>
-            </header>
-            <section class="searchContainer">
-                <form class="searchForm" method="get" action="https://google.com/search">
-                    <input class="searchBar search_google" type="text" name="q" placeholder="Google" autofocus="autofocus" search_="">
-                </form>
-                <form class="searchForm" method="get" action="https://youtube.com/results">
-                    <input class="searchBar search_youtube" type="text" name="search_query" placeholder="Youtube" search_="">
-                </form>
-                <form class="searchForm" method="get" action="https://en.wikipedia.org/w/index.php">
-                    <input class="searchBar search_wikipedia" type="text" name="search" placeholder="Wikipedia (en)" search_="">
-                </form>
-            </section>
-            <nav>
-                <ul class="buttonList">
-                    <li class="button button_green"><a href="http://github.com/gokoururi/homepage">Github</a></li>
-                    <li class="button button_grey"><a href="#">Gelbooru</a></li>
-                    <li class="button button_grey buttonArrow"><a href="#">Duke of Earl</a>
-                        <ul>
-                            <li><a href="#">When I hold you</a></li>
-                            <li><a href="#">In my Arms</a></li>
-                            <li><a href="#">You are my duchess</a></li>
-                            <li><a href="#">Of earl</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="columnList">
-                    <li class="column column_purple">
-                        <a>Resources</a>
-                        <ul>
-                            <li><a href="https://drive.google.com/folderview?id=0B_VmbVyD4eT3N1VUbGN4Wjd5OVE">Cute 2D Girls</a></li>
-                            <li><a href="https://developer.mozilla.org//">MDN</a></li>
-                            <li><a href="https://wiki.installgentoo.com/">Install Gentoo</a></li>
-                        </ul>
-                    </li>
-                    <li class="column column_green">
-                        <a>4chon</a>
-                        <ul>
-                            <li><a href="http://boards.4chan.org/v/">Video Games</a></li>
-                            <li><a href="http://boards.4chan.org/vg/">Video Game General</a></li>
-                            <li><a href="http://boards.4chan.org/g/">Technology</a></li>
-                            <li><a href="http://boards.4chan.org/jp/">Otaku Culture</a></li>
-                        </ul>
-                    </li>
-                    <li class="column column_pink">
-                        <a>Animution</a>
-                        <ul>
-                            <li><a href="http://bakabt.me/">Bakabt</a></li>
-                            <li><a href="http://www.nyaa.se/">Nyaa</a></li>
-                            <li><a href="http://utw.me/">UTW</a></li>
-                            <li><a href="http://mazuisubs.com/">Mazui</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </main>
-    
+        :root {
+            /* Gruvbox Color Palette */
+            --bg-dark: #282828;
+            --bg-0: #3c3836;
+            --bg-1: #504945;
+            --bg-2: #665c54;
+            --fg: #ebdbb2;
+            --fg-1: #d5c4a1;
+            --fg-2: #bdae93;
+            --fg-3: #a89984;
+            --red: #fb4934;
+            --green: #b8bb26;
+            --yellow: #fabd2f;
+            --blue: #83a598;
+            --purple: #d3869b;
+            --aqua: #8ec07c;
+            --orange: #fe8019;
+            --gray: #928374;
+        }
 
-</body></html>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Iosevka', 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--fg);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--bg-0);
+            max-width: 1200px;
+            width: 90%;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            min-height: 600px;
+            border: 2px solid var(--bg-2);
+        }
+
+        .sidebar {
+            width: 300px;
+            padding: 15px;
+            background-color: var(--bg-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 2px solid var(--bg-2);
+        }
+
+        .sidebar img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--orange);
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+            border-left: 4px solid var(--orange);
+            padding-left: 15px;
+        }
+
+        .welcome h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--yellow);
+        }
+
+        .welcome p {
+            color: var(--fg-3);
+            font-size: 1rem;
+        }
+
+        .date-time {
+            margin-bottom: 30px;
+        }
+
+        .date-time .time {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--aqua);
+        }
+
+        .date-time .date {
+            color: var(--fg-3);
+        }
+
+        .search-bar {
+            margin-bottom: 30px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            background-color: var(--bg-1);
+            border: 2px solid var(--bg-2);
+            border-radius: 6px;
+            padding: 12px 15px;
+            color: var(--fg);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--orange);
+            box-shadow: 0 0 0 1px var(--orange);
+        }
+
+        .search-bar input::placeholder {
+            color: var(--fg-3);
+        }
+
+        .bookmarks-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .bookmark-section {
+            margin-bottom: 25px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .bookmark-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .bookmark-section h2::after {
+            content: '';
+            flex-grow: 1;
+            height: 2px;
+            background: linear-gradient(to right, var(--green), transparent);
+            margin-left: 15px;
+        }
+
+        .bookmark-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .bookmark-card {
+            background-color: var(--bg-0);
+            border: 2px solid var(--bg-1);
+            border-radius: 6px;
+            padding: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .bookmark-card:hover {
+            background-color: var(--bg-1);
+            border-color: var(--orange);
+            transform: translateY(-2px);
+        }
+
+        .bookmark-card a {
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .bookmark-card a:hover {
+            color: var(--yellow);
+        }
+
+        .bookmark-card a::before {
+            content: '>';
+            margin-right: 8px;
+            font-weight: bold;
+            color: var(--orange);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid var(--bg-2);
+                padding: 20px;
+            }
+
+            .sidebar img {
+                max-height: 300px;
+                width: auto;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .bookmark-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="yoru.png" alt="Yoru >:)">
+        </div>
+
+        <div class="content">
+            <div class="date-time">
+                <div class="time" id="time">00:00:00</div>
+                <div class="date" id="date">Monday, January 1, 2025</div>
+            </div>
+
+            <div class="welcome">
+                <h1>Welcome back, Orion</h1>
+                <p>Your personal startpage awaits.</p>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search the web..." id="search-input">
+            </div>
+
+            <div class="bookmarks-container">
+                <div class="bookmark-section">
+                    <h2>Essentials</h2>
+                    <div class="bookmark-grid">
+                        <div class="bookmark-card">
+                            <a href="https://anilist.co/">AniList</a>
+                        </div>
+                        <div class="bookmark-card">
+                            <a href="https://github.com/">GitHub</a>
+                        </div>
+                        <div class="bookmark-card">
+                            <a href="https://mangafire.to/">MangaFire</a>
+                        </div>
+                        <div class="bookmark-card">
+                            <a href="https://claude.ai/new">Claude</a>
+                        </div>
+                        <div class="bookmark-card">
+                            <a href="https://store.steampowered.com/">Steam</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bookmark-section">
+                    <h2>Piracy</h2>
+                    <div class="bookmark-grid">
+                        <div class="bookmark-card">
+                            <a href="https://1337x.to/">1337x</a>
+                        </div>
+                        <div class="bookmark-card">
+                            <a href="https://rutracker.org/forum/index.php">RuTracker</a>
+                        </div>
+                        <div class="bookmark-card">
+                            <a href="https://www.reddit.com/r/Piracy/wiki/megathread/games">r/Piracy Games</a>
+                        </div>
+                        <div class="bookmark-card">
+                            <a href="https://annas-archive.org/">Anna's Archive</a>
+                        </div>
+                        <div class="bookmark-card">
+                            <a href="https://nyaa.si/">Nyaa</a>
+                        </div>
+                        <div class="bookmark-card">
+                            <a href="https://fmhy.net/">freemediaheckyeah</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+        // Clock and date functionality
+        function updateTime() {
+            const now = new Date();
+
+            // Update time
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
+
+            // Update date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('date').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        // Update time initially and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        // Search functionality
+        const searchInput = document.getElementById('search-input');
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                }
+            }
+        });
+
+        // Ensure the container is at least as tall as the image
+        function adjustContainerHeight() {
+            const image = document.querySelector('.sidebar img');
+            const container = document.querySelector('.container');
+
+            if (image && container) {
+                const imageHeight = image.offsetHeight;
+                if (container.offsetHeight < imageHeight) {
+                    container.style.minHeight = imageHeight + 'px';
+                }
+            }
+        }
+
+        // Run on page load and after image loads
+        window.addEventListener('load', adjustContainerHeight);
+        if (document.querySelector('.sidebar img')) {
+            document.querySelector('.sidebar img').addEventListener('load', adjustContainerHeight);
+        }
+
+        // Also run when window is resized
+        window.addEventListener('resize', adjustContainerHeight);
+    </script>
+</body>
+</html>
