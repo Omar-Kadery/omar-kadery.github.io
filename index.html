@@ -3,593 +3,451 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Omar Kadery</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-            rel="stylesheet"
-        />
+        <title>Welcome</title>
         <style>
-            :root {
-                /* Enhanced Gruvbox Color Palette with more earthy tones */
-                --bg-dark: #282828;
-                --bg-0: #32302f;
-                --bg-1: #3c3836;
-                --bg-2: #504945;
-                --bg-3: #665c54;
-                --fg-0: #fbf1c7;
-                --fg-1: #ebdbb2;
-                --fg-2: #d5c4a1;
-                --fg-3: #bdae93;
-                --fg-4: #a89984;
-                --red: #cc241d;
-                --red-dim: #9d0006;
-                --green: #98971a;
-                --green-dim: #79740e;
-                --yellow: #d79921;
-                --yellow-dim: #b57614;
-                --blue: #458588;
-                --blue-dim: #076678;
-                --purple: #b16286;
-                --purple-dim: #8f3f71;
-                --aqua: #689d6a;
-                --aqua-dim: #427b58;
-                --orange: #d65d0e;
-                --orange-dim: #af3a03;
-                --earth-1: #a9875f;
-                --earth-2: #897363;
-                --earth-3: #766354;
-            }
-
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: "IBM Plex Mono", monospace;
-            }
-
             body {
-                background-color: var(--bg-dark);
-                color: var(--fg-1);
-                min-height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                font-family:
+                    "IBM Plex Mono", monospace, Tahoma, Geneva, Verdana,
+                    sans-serif;
+                margin: 0;
                 padding: 20px;
+                background-color: #fff;
+                color: #000;
             }
 
-            .container {
-                background-color: var(--bg-0);
-                max-width: 1200px;
-                width: 90%;
-                border-radius: 8px;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-                overflow: hidden;
-                display: flex;
-                min-height: 600px;
-                border: 2px solid var(--bg-3);
+            .welcome-message {
+                max-width: 800px;
+                margin: 0 auto 20px;
+                padding: 20px;
+                text-align: center;
             }
 
-            .sidebar {
-                width: 300px;
-                padding: 15px;
-                background-color: var(--bg-1);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-right: 2px solid var(--bg-2);
-                background-image: url("yoru.png");
-                background-size: cover;
-                background-position: 45% center;
-                /*background-size: auto;
-                background-position: 46% top;*/
+            .welcome-message h2 {
+                color: #000;
+                margin-top: 10px;
             }
 
-            .sidebar img {
-                width: 100%;
-                height: auto;
-                border-radius: 5px;
-                object-fit: cover;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-                border: 2px solid var(--orange);
+            .welcome-image {
+                max-width: 100%;
+                margin-bottom: 10px;
             }
 
-            .content {
-                flex-grow: 1;
-                padding: 30px;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .welcome {
-                margin-bottom: 30px;
-                border-left: 4px solid var(--orange);
-                padding-left: 15px;
-            }
-
-            .welcome h1 {
-                font-size: 2.2rem;
-                font-weight: 700;
-                color: var(--yellow);
+            h1 {
+                color: #000;
+                margin-bottom: 20px;
             }
 
             .bookmarks-container {
-                flex-grow: 1;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
+                max-width: 800px;
+                margin: 0 auto;
+                background-color: white;
+                border: 1px solid #ddd;
+                padding: 20px;
             }
 
-            .carousel-navigation {
+            .tree-view {
+                padding-left: 0;
+            }
+
+            .tree-item {
+                list-style-type: none;
+                margin: 4px 0;
+                position: relative;
+            }
+
+            .folder,
+            .bookmark {
                 display: flex;
-                justify-content: center;
                 align-items: center;
-                margin-bottom: 20px;
+                padding: 8px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+            .folder {
+                background-color: #f9f9f9;
+            }
+
+            .folder:hover {
+                background-color: #f1f1f1;
+            }
+
+            .bookmark {
+                background-color: #fff;
+            }
+
+            .bookmark:hover {
+                background-color: #f9f9f9;
+            }
+
+            .folder-icon,
+            .bookmark-icon {
+                margin-right: 8px;
+                width: 20px;
+                text-align: center;
+            }
+
+            .folder-name,
+            .bookmark-name {
+                flex-grow: 1;
+            }
+
+            .toggle-btn {
+                margin-right: 5px;
+                width: 16px;
+                height: 16px;
+                text-align: center;
+                line-height: 14px;
+                background-color: #f1f1f1;
+                border: 1px solid #ddd;
+                cursor: pointer;
+                font-size: 12px;
                 user-select: none;
             }
 
-            .carousel-btn {
-                background-color: var(--bg-1);
-                border: 2px solid var(--bg-2);
-                color: var(--fg-1);
-                width: 35px;
-                height: 35px;
-                border-radius: 5px;
-                font-size: 1.2rem;
-                cursor: pointer;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: all 0.2s ease;
-            }
-
-            .carousel-btn:hover {
-                background-color: var(--bg-2);
-                border-color: var(--orange);
-                color: var(--yellow);
-            }
-
-            .carousel-btn:active {
-                transform: scale(0.95);
-            }
-
-            .carousel-btn:focus {
-                outline: none;
-                border-color: var(--yellow);
-            }
-
-            .pagination {
-                display: flex;
-                margin: 0 15px;
-            }
-
-            .page-indicator {
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background-color: var(--bg-2);
-                margin: 0 5px;
-                cursor: pointer;
-                transition: all 0.2s ease;
-            }
-
-            .page-indicator.active {
-                background-color: var(--orange);
-                transform: scale(1.2);
-            }
-
-            #bookmarks-carousel {
-                position: relative;
-                height: 100%;
+            .children {
+                padding-left: 30px;
+                margin-left: 10px;
+                border-left: 1px dashed #ddd;
                 overflow: hidden;
+                max-height: 0;
+                transition: max-height 0.3s ease-out;
             }
 
-            .carousel-page {
-                position: absolute;
-                width: 100%;
-                transition: transform 0.4s ease-in-out;
+            .expanded > .children {
+                max-height: 1000px;
+                transition: max-height 0.5s ease-in;
             }
 
-            .bookmark-section {
-                margin-bottom: 25px;
-                animation: fadeIn 0.6s ease;
-            }
-
-            .bookmark-section h2 {
-                font-size: 1.4rem;
-                margin-bottom: 15px;
-                color: var(--green);
-                display: flex;
-                align-items: center;
-                font-weight: 600;
-            }
-
-            .bookmark-section h2::after {
-                content: "";
-                flex-grow: 1;
-                height: 2px;
-                background: linear-gradient(
-                    to right,
-                    var(--earth-1),
-                    transparent
-                );
-                margin-left: 15px;
-            }
-
-            .bookmark-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-                gap: 12px;
-            }
-
-            .bookmark-card {
-                background-color: var(--bg-1);
-                border: 2px solid var(--bg-2);
-                border-radius: 6px;
-                padding: 12px;
-                transition: all 0.2s ease;
-            }
-
-            .bookmark-card:hover {
-                background-color: var(--bg-2);
-                border-color: var(--earth-1);
-                transform: translateY(-2px);
-            }
-
-            .bookmark-card a {
-                color: var(--fg-1);
+            a {
                 text-decoration: none;
-                font-size: 1rem;
-                display: flex;
-                align-items: center;
+                color: #000;
             }
 
-            .bookmark-card a:hover {
-                color: var(--yellow);
-            }
-
-            .bookmark-card a::before {
-                content: ">";
-                margin-right: 8px;
-                font-weight: bold;
-                color: var(--orange);
-            }
-
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            @media (max-width: 900px) {
-                .container {
-                    flex-direction: column;
-                    min-height: auto;
-                }
-
-                .sidebar {
-                    width: 100%;
-                    border-right: none;
-                    border-bottom: 2px solid var(--bg-2);
-                    padding: 20px;
-                }
-
-                .sidebar img {
-                    max-height: 300px;
-                    width: auto;
-                    max-width: 100%;
-                }
-            }
-
-            @media (max-width: 600px) {
-                .bookmark-grid {
-                    grid-template-columns: repeat(
-                        auto-fill,
-                        minmax(140px, 1fr)
-                    );
-                }
+            a:hover {
+                text-decoration: underline;
             }
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="sidebar">
-                <!--<img src="yoru.png" />-->
-            </div>
+        <div class="welcome-message">
+            <img src="estelle.gif" />
+            <h2>Welcome Back</h2>
+        </div>
 
-            <div class="content">
-                <div class="date-time">
-                    <div class="time" id="time">00:00:00</div>
-                    <div class="date" id="date">Monday, January 1, 2025</div>
-                </div>
-
-                <div class="welcome">
-                    <h1>Welcome back, Omar</h1>
-                </div>
-
-                <div class="bookmarks-container">
-                    <div id="bookmarks-carousel">
-                        <!-- Bookmark sections will be generated by JavaScript -->
-                    </div>
-
-                    <div class="carousel-navigation">
-                        <button id="prev-btn" class="carousel-btn">&lt;</button>
-                        <div class="pagination" id="pagination">
-                            <span
-                                class="page-indicator active"
-                                data-page="0"
-                            ></span>
-                            <!-- Additional indicators will be added by JavaScript -->
-                        </div>
-                        <button id="next-btn" class="carousel-btn">&gt;</button>
-                    </div>
-                </div>
-            </div>
+        <div class="bookmarks-container">
+            <ul id="bookmarks-tree" class="tree-view"></ul>
         </div>
 
         <script>
-            // ============================================================
-            // EDIT THIS ARRAY TO ADD/MODIFY YOUR BOOKMARK GROUPS AND LINKS
-            // ============================================================
-            const bookmarkGroups = [
-                {
-                    name: "Essentials",
-                    links: [
-                        { name: "GitHub", url: "https://github.com/" },
-                        { name: "Claude", url: "https://claude.ai/new" },
-                        { name: "YouTube", url: "https://youtube.com/" },
-                        { name: "Protonmail", url: "https://mail.proton.me" },
-                        { name: "Mullvad", url: "https://mullvad.net" },
-                    ],
-                },
-                {
-                    name: "Filesharing ;)",
-                    links: [
-                        { name: "1337x", url: "https://1337x.to/" },
-                        {
-                            name: "RuTracker",
-                            url: "https://rutracker.org/forum/index.php",
-                        },
-                        {
-                            name: "r/Piracy",
-                            url: "https://www.reddit.com/r/Piracy/wiki/megathread/games",
-                        },
-                        {
-                            name: "Anna's Archive",
-                            url: "https://annas-archive.org/",
-                        },
-                        { name: "Nyaa", url: "https://nyaa.si/" },
-                        { name: "fmhy", url: "https://fmhy.net/" },
-                    ],
-                },
-                {
-                    name: "Anime/Manga/Books/VNs",
-                    links: [
-                        { name: "MangaFire", url: "https://mangafire.to/" },
-                        { name: "GFL", url: "https://gfl.amaryllisworks.pw/#" },
-                        { name: "AniList", url: "https://anilist.co/" },
-                        { name: "Hardcover", url: "https://hardcover.app" },
-                    ],
-                },
-                {
-                    name: "Gaming",
-                    links: [
-                        {
-                            name: "Steam",
-                            url: "https://store.steampowered.com/",
-                        },
-                        {
-                            name: "CDKeys",
-                            url: "https://cdkeys.com/",
-                        },
-                        {
-                            name: "Fanatical",
-                            url: "https://fanatical.com/",
-                        },
-                        {
-                            name: "GOG",
-                            url: "https://gog.com/",
-                        },
-                        {
-                            name: "GMG",
-                            url: "https://greenmangaming.com/",
-                        },
-                        {
-                            name: "Humble Bundle",
-                            url: "https://humblebundle.com",
-                        },
-                        {
-                            name: "Wingamestore",
-                            url: "https://wingamestore.com",
-                        },
-                    ],
-                },
-            ];
+            // Sample bookmarks data (this would come from your JS object)
+            const bookmarksData = {
+                name: "Root",
+                type: "folder",
+                children: [
+                    {
+                        name: "Essentials",
+                        type: "folder",
+                        children: [
+                            {
+                                name: "This Page",
+                                type: "bookmark",
+                                url: "https://github.com/Omar-Kadery/omar-kadery.github.io/blob/main/index.html",
+                            },
+                            {
+                                name: "YouTube",
+                                type: "bookmark",
+                                url: "https://youtube.com",
+                            },
+                            {
+                                name: "Github",
+                                type: "bookmark",
+                                url: "https://github.com",
+                            },
+                            {
+                                name: "Claude",
+                                type: "bookmark",
+                                url: "https://claude.ai",
+                            },
+                            {
+                                name: "Protonmail",
+                                type: "bookmark",
+                                url: "https://protonmail.com",
+                            },
+                            {
+                                name: "Proton Drive",
+                                type: "bookmark",
+                                url: "https://drive.proton.me/u/0/",
+                            },
+                            {
+                                name: "Mullvad",
+                                type: "bookmark",
+                                url: "https://mullvad.net",
+                            },
+                            {
+                                name: "Arch Wiki",
+                                type: "bookmark",
+                                url: "https://wiki.archlinux.org",
+                            },
+                            {
+                                name: "TV Tropes",
+                                type: "bookmark",
+                                url: "https://tvtropes.org",
+                            },
+                        ],
+                    },
+                    {
+                        name: "Filesharing ;)",
+                        type: "folder",
+                        children: [
+                            {
+                                name: "1337x",
+                                type: "bookmark",
+                                url: "https://1337x.to/",
+                            },
+                            {
+                                name: "Rutracker",
+                                type: "bookmark",
+                                url: "https://rutracker.org/forum/index.php",
+                            },
+                            {
+                                name: "Piracy Megathread",
+                                type: "bookmark",
+                                url: "https://www.reddit.com/r/Piracy/wiki/megathread/games",
+                            },
+                            {
+                                name: "Anna's Archive",
+                                type: "bookmark",
+                                url: "https://annas-archive.org/",
+                            },
+                            {
+                                name: "Nyaa",
+                                type: "bookmark",
+                                url: "https://nyaa.si/",
+                            },
+                            {
+                                name: "fmhy",
+                                type: "bookmark",
+                                url: "https://fmhy.net/",
+                            },
+                            {
+                                name: "Dodi",
+                                type: "bookmark",
+                                url: "https://dodi-repacks.site/",
+                            },
+                            {
+                                name: "Fitgirl",
+                                type: "bookmark",
+                                url: "https://fitgirl-repacks.site/",
+                            },
+                            {
+                                name: "Roms Megathread",
+                                type: "bookmark",
+                                url: "https://r-roms.github.io/",
+                            },
+                            {
+                                name: "nsw2",
+                                type: "bookmark",
+                                url: "https://nsw2u.in/",
+                            },
+                        ],
+                    },
+                    {
+                        name: "Anime/Manga/Books/VNs",
+                        type: "folder",
+                        children: [
+                            {
+                                name: "Mangafire",
+                                type: "bookmark",
+                                url: "https://mangafire.to/",
+                            },
+                            {
+                                name: "GFL",
+                                type: "bookmark",
+                                url: "https://gfl.amaryllisworks.pw/#",
+                            },
+                            {
+                                name: "Anilist",
+                                type: "bookmark",
+                                url: "https://anilist.co/",
+                            },
+                            {
+                                name: "Hardcover",
+                                type: "bookmark",
+                                url: "https://hardcover.app",
+                            },
+                            {
+                                name: "Kobo",
+                                type: "bookmark",
+                                url: "https://www.kobo.com/ww/en",
+                            },
+                        ],
+                    },
+                    {
+                        name: "Gaming",
+                        type: "folder",
+                        children: [
+                            {
+                                name: "Steam",
+                                type: "bookmark",
+                                url: "https://store.steampowered.com/",
+                            },
+                            {
+                                name: "Isthereanydeal",
+                                type: "bookmark",
+                                url: "https://isthereanydeal.com",
+                            },
+                            {
+                                name: "CDKeys",
+                                type: "bookmark",
+                                url: "https://cdkeys.com/",
+                            },
+                            {
+                                name: "Fanatical",
+                                type: "bookmark",
+                                url: "https://fanatical.com/",
+                            },
+                            {
+                                name: "GOG",
+                                type: "bookmark",
+                                url: "https://gog.com/",
+                            },
+                            {
+                                name: "Green Man Gaming",
+                                type: "bookmark",
+                                url: "https://greenmangaming.com/",
+                            },
+                            {
+                                name: "Humble Bundle",
+                                type: "bookmark",
+                                url: "https://humblebundle.com",
+                            },
+                            {
+                                name: "WinGameStore",
+                                type: "bookmark",
+                                url: "https://wingamestore.com",
+                            },
+                            {
+                                name: "Gamebillet",
+                                type: "bookmark",
+                                url: "https://gamebillet.com",
+                            },
+                        ],
+                    },
+                    {
+                        name: "News",
+                        type: "folder",
+                        children: [
+                            {
+                                name: "AP News",
+                                type: "bookmark",
+                                url: "https://apnews.com",
+                            },
+                            {
+                                name: "Gematsu",
+                                type: "bookmark",
+                                url: "https://gematsu.com",
+                            },
+                            {
+                                name: "VGC",
+                                type: "bookmark",
+                                url: "https://videogameschronicle.com",
+                            },
+                        ],
+                    },
+                    {
+                        name: "Dev",
+                        type: "folder",
+                        children: [
+                            {
+                                name: "Roadmap",
+                                type: "bookmark",
+                                url: "https://roadmap.sh",
+                            },
+                        ],
+                    },
+                ],
+            };
 
-            // Constants for carousel
-            const GROUPS_PER_PAGE = 2;
-            let currentPage = 0;
-            let totalPages = Math.ceil(bookmarkGroups.length / GROUPS_PER_PAGE);
+            // Function to create the bookmarks tree UI
+            function createBookmarksTree() {
+                const treeContainer = document.getElementById("bookmarks-tree");
 
-            // Function to create pagination indicators
-            function createPagination() {
-                const pagination = document.getElementById("pagination");
-                pagination.innerHTML = ""; // Clear existing pagination
+                // Create and render the tree
+                renderBookmarks(bookmarksData.children, treeContainer);
 
-                for (let i = 0; i < totalPages; i++) {
-                    const indicator = document.createElement("span");
-                    indicator.className =
-                        "page-indicator" + (i === currentPage ? " active" : "");
-                    indicator.dataset.page = i;
-                    indicator.addEventListener("click", () => {
-                        navigateToPage(i);
+                // Add event listeners for folder expansion/collapse
+                document.querySelectorAll(".folder").forEach((folder) => {
+                    folder.addEventListener("click", function (e) {
+                        if (e.target.tagName !== "A") {
+                            const listItem = this.closest(".tree-item");
+                            toggleFolder(listItem);
+                            e.stopPropagation();
+                        }
                     });
-                    pagination.appendChild(indicator);
-                }
-            }
-
-            // Function to navigate to a specific page
-            function navigateToPage(pageNumber) {
-                if (pageNumber < 0 || pageNumber >= totalPages) return;
-
-                currentPage = pageNumber;
-
-                // Update carousel position
-                const carousel = document.getElementById("bookmarks-carousel");
-                const pages = carousel.querySelectorAll(".carousel-page");
-
-                pages.forEach((page, index) => {
-                    page.style.transform = `translateX(${(index - currentPage) * 100}%)`;
                 });
 
-                // Update pagination indicators
-                const indicators = document.querySelectorAll(".page-indicator");
-                indicators.forEach((indicator, index) => {
-                    indicator.classList.toggle("active", index === currentPage);
+                // Add event listeners for toggle buttons
+                document.querySelectorAll(".toggle-btn").forEach((btn) => {
+                    btn.addEventListener("click", function (e) {
+                        const listItem = this.closest(".tree-item");
+                        toggleFolder(listItem);
+                        e.stopPropagation();
+                    });
                 });
             }
 
-            // Function to create the bookmark sections based on the array
-            function createBookmarkSections() {
-                const carousel = document.getElementById("bookmarks-carousel");
-                carousel.innerHTML = ""; // Clear existing content
+            // Function to render the bookmarks
+            function renderBookmarks(items, container) {
+                items.forEach((item) => {
+                    const li = document.createElement("li");
+                    li.className = "tree-item";
 
-                // Create pages
-                for (let i = 0; i < totalPages; i++) {
-                    const page = document.createElement("div");
-                    page.className = "carousel-page";
-                    page.style.transform = `translateX(${(i - currentPage) * 100}%)`;
+                    if (item.type === "folder") {
+                        li.innerHTML = `
+                        <div class="folder">
+                            <span class="toggle-btn">+</span>
+                            <span class="folder-icon">📁</span>
+                            <span class="folder-name">${item.name}</span>
+                        </div>
+                        <ul class="children"></ul>
+                    `;
 
-                    // Get groups for this page
-                    const startIndex = i * GROUPS_PER_PAGE;
-                    const endIndex = Math.min(
-                        startIndex + GROUPS_PER_PAGE,
-                        bookmarkGroups.length,
-                    );
-
-                    for (let j = startIndex; j < endIndex; j++) {
-                        const group = bookmarkGroups[j];
-
-                        // Create section
-                        const section = document.createElement("div");
-                        section.className = "bookmark-section";
-
-                        // Add section heading
-                        const heading = document.createElement("h2");
-                        heading.textContent = group.name;
-                        section.appendChild(heading);
-
-                        // Create grid for links
-                        const grid = document.createElement("div");
-                        grid.className = "bookmark-grid";
-
-                        // Add links to grid
-                        group.links.forEach((link) => {
-                            const card = document.createElement("div");
-                            card.className = "bookmark-card";
-
-                            const anchor = document.createElement("a");
-                            anchor.href = link.url;
-                            anchor.textContent = link.name;
-
-                            card.appendChild(anchor);
-                            grid.appendChild(card);
-                        });
-
-                        section.appendChild(grid);
-                        page.appendChild(section);
+                        // Render children
+                        if (item.children && item.children.length > 0) {
+                            renderBookmarks(
+                                item.children,
+                                li.querySelector(".children"),
+                            );
+                        }
+                    } else if (item.type === "bookmark") {
+                        li.innerHTML = `
+                        <div class="bookmark">
+                            <span class="bookmark-icon">🔖</span>
+                            <a href="${item.url}" class="bookmark-name" target="_blank">${item.name}</a>
+                        </div>
+                    `;
                     }
 
-                    carousel.appendChild(page);
-                }
-
-                // Create pagination
-                createPagination();
-
-                // Add event listeners for navigation buttons
-                document
-                    .getElementById("prev-btn")
-                    .addEventListener("click", () => {
-                        navigateToPage(currentPage - 1);
-                    });
-
-                document
-                    .getElementById("next-btn")
-                    .addEventListener("click", () => {
-                        navigateToPage(currentPage + 1);
-                    });
+                    container.appendChild(li);
+                });
             }
 
-            // Call the function to create sections when page loads
-            document.addEventListener("DOMContentLoaded", () => {
-                totalPages = Math.ceil(bookmarkGroups.length / GROUPS_PER_PAGE);
-                createBookmarkSections();
-            });
+            // Function to toggle folder expansion/collapse
+            function toggleFolder(item) {
+                item.classList.toggle("expanded");
 
-            // Clock and date functionality
-            function updateTime() {
-                const now = new Date();
-
-                // Update time
-                const hours = String(now.getHours()).padStart(2, "0");
-                const minutes = String(now.getMinutes()).padStart(2, "0");
-                const seconds = String(now.getSeconds()).padStart(2, "0");
-                document.getElementById("time").textContent =
-                    `${hours}:${minutes}:${seconds}`;
-
-                // Update date
-                const options = {
-                    weekday: "long",
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                };
-                document.getElementById("date").textContent =
-                    now.toLocaleDateString("en-US", options);
-            }
-
-            // Update time initially and then every second
-            updateTime();
-            setInterval(updateTime, 1000);
-
-            // Ensure the container is at least as tall as the image
-            function adjustContainerHeight() {
-                const image = document.querySelector(".sidebar img");
-                const container = document.querySelector(".container");
-
-                if (image && container) {
-                    const imageHeight = image.offsetHeight;
-                    if (container.offsetHeight < imageHeight) {
-                        container.style.minHeight = imageHeight + "px";
-                    }
+                const toggleBtn = item.querySelector(".toggle-btn");
+                if (item.classList.contains("expanded")) {
+                    toggleBtn.textContent = "-";
+                } else {
+                    toggleBtn.textContent = "+";
                 }
             }
 
-            // Add keyboard navigation for carousel
-            document.addEventListener("keydown", (e) => {
-                if (e.key === "ArrowLeft") {
-                    navigateToPage(currentPage - 1);
-                } else if (e.key === "ArrowRight") {
-                    navigateToPage(currentPage + 1);
-                }
-            });
-
-            // Run on page load and after image loads
-            window.addEventListener("load", adjustContainerHeight);
-            if (document.querySelector(".sidebar img")) {
-                document
-                    .querySelector(".sidebar img")
-                    .addEventListener("load", adjustContainerHeight);
-            }
-
-            // Also run when window is resized
-            window.addEventListener("resize", adjustContainerHeight);
+            // Initialize the bookmarks tree when the page loads
+            document.addEventListener("DOMContentLoaded", createBookmarksTree);
         </script>
     </body>
 </html>
